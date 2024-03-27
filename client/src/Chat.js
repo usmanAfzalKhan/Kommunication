@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
+  
 
   const sendMessage = async () => {
     if (currentMessage !== "") {
@@ -26,7 +27,7 @@ useEffect(() => {
 }, [socket]); 
 
   return (
-    <div>
+    <div className="chat-window">
       <div className="chat-header">
         <p>Live Chat</p>
       </div>
@@ -34,7 +35,7 @@ useEffect(() => {
       <div className="chat-footer">
         <input
           type="text"
-          placeholder="Hey..."
+          placeholder="Send Message..."
           onChange={(event) => {
             setCurrentMessage(event.target.value);
           }}
